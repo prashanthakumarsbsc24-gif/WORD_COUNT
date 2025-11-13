@@ -50,6 +50,12 @@ public class WordCounterSimple {
                     } else {
                         special++;
                     }
+                 String[] lineWords = line.trim().split("\\s+");
+                for (String word : lineWords) {
+                    if (!word.isEmpty()) {
+                        words++;
+                        totalWordLength += word.length();
+                    }
                 }
             }
 
@@ -57,7 +63,6 @@ public class WordCounterSimple {
             System.out.println("Error reading file.");
             e.printStackTrace();
         }
-
         words = words + 1; // Adjust word count
 
         System.out.println("\n===== FILE ANALYSIS =====");
@@ -69,5 +74,6 @@ public class WordCounterSimple {
         System.out.println("Total Special Characters: " + special);
     }
 }
+
 
 
