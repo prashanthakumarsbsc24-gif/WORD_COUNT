@@ -1,4 +1,4 @@
-import java.io.File;
+    import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -45,11 +45,10 @@ public class WordCounterSimple {
                             consonants++;
                     } else if (Character.isDigit(ch)) {
                         digits++;
-                    } else if (ch == ' ') {
-                        words++;
-                    } else {
+                    } else if (ch != ' ') {
                         special++;
                     }
+
                 }
                         
                  String[] lineWords = line.trim().split("\\s+");
@@ -83,3 +82,4 @@ public class WordCounterSimple {
 
     }
 }
+
