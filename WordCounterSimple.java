@@ -51,7 +51,7 @@ public class WordCounterSimple {
 
                 }
                         
-                 String[] lineWords = line.trim().split("\\s+");
+                String[] lineWords = line.trim().split("\\s+");
                 for (String word : lineWords) {
                     if (!word.isEmpty()) {
                         words++;
@@ -82,4 +82,5 @@ public class WordCounterSimple {
 
     }
 }
+
 
