@@ -18,12 +18,23 @@ public class WordCounterSimple {
         }
 
         int vowels = 0, consonants = 0, lines = 0, words = 0, digits = 0, special = 0;
+        int characters = 0, sentences = 0, paragraphs = 0;
+        double totalWordLength = 0.0;
 
-        try (Scanner sc = new Scanner(file)) {
+     try (Scanner sc = new Scanner(file)) {
+            // ===== PERSON B: Improved main file reading logic =====
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-                lines++;
 
+                if (line.trim().isEmpty()) {
+                    paragraphs++;
+                    continue;
+                }
+
+                lines++;
+                characters += line.length();
+                sentences += line.split("[.!?]+").length;
+                
                 for (int i = 0; i < line.length(); i++) {
                     char ch = Character.toLowerCase(line.charAt(i));
 
@@ -58,4 +69,5 @@ public class WordCounterSimple {
         System.out.println("Total Special Characters: " + special);
     }
 }
+
 
