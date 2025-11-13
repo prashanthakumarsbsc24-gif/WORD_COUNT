@@ -1,4 +1,4 @@
-    import java.io.File;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -50,6 +50,8 @@ public class WordCounterSimple {
                     } else {
                         special++;
                     }
+                }
+                        
                  String[] lineWords = line.trim().split("\\s+");
                 for (String word : lineWords) {
                     if (!word.isEmpty()) {
