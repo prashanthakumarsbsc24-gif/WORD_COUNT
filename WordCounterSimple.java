@@ -1,4 +1,4 @@
-import java.io.File;
+    import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -63,17 +63,21 @@ public class WordCounterSimple {
             System.out.println("Error reading file.");
             e.printStackTrace();
         }
-        words = words + 1; // Adjust word count
+        if (lines > 0) paragraphs++;  // handle last paragraph
+        double averageWordLength = words > 0 ? totalWordLength / words : 0.0;
+
 
         System.out.println("\n===== FILE ANALYSIS =====");
         System.out.println("Total Lines: " + lines);
+        System.out.println("Total Paragraphs: " + paragraphs);
+        System.out.println("Total Sentences: " + sentences);
         System.out.println("Total Words: " + words);
+        System.out.println("Total Characters: " + characters);
         System.out.println("Total Vowels: " + vowels);
         System.out.println("Total Consonants: " + consonants);
         System.out.println("Total Digits: " + digits);
         System.out.println("Total Special Characters: " + special);
+        System.out.printf("Average Word Length: %.2f\n", averageWordLength);
+
     }
 }
-
-
-
